@@ -1,94 +1,108 @@
-*{
+* {
     margin: 0; 
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-.container{
-    width:100%;
+
+.container {
+    width: 100%;
     min-height: 100vh;
-    background:linear-gradient(140deg, #FFE4D6, #B0578D);
-    padding:10px;
+    background: linear-gradient(140deg, #FFE4D6, #B0578D);
+    padding: 10px;
 }
-.todo-app{
-    width:100%;
-    max-width:540px;
-    background:#FFE4D6;
-    margin:100px auto 20px;
-    padding:40px 30px 70px;
-    border-radius:10px;
+
+.todo-app {
+    width: 100%;
+    max-width: 900px;
+    background: #FFE4D6;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
 }
-.todo-app h2{
+
+.todo-app h2 {
     color: #002765;
-    display:flex;
-    align-items: center;
     margin-bottom: 20px;
 }
-.row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:#edeef0;
-    border-radius:30px;
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
 }
-input{
-    flex:1;
-    border:none;
-    outline:none;
-    background:transparent;
-    padding:10px;
-    font-weight: 14px;
+
+input[type="text"], input[type="date"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
 }
-button{
-    border:none;
-    outline:none;
-    padding:16px 50px;
-    background:#B0578D;
-    color:#fff;
-    font-size:16px;
-    cursor:pointer;
-    border-radius:40px;
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #B0578D;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
 }
-ul li{
+
+.status-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.status-card {
+    width: 22%;
+    background: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.status-card h3 {
+    margin-bottom: 20px;
+}
+
+ul.task-list {
     list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select:none;
-    cursor:pointer;
-    position:relative;
+    padding: 0;
 }
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 28px;
-    width:28px;
-    border-radius:20%;
-    background-image: url("https://static.thenounproject.com/png/1126678-200.png");
-    background-size: cover;
-    background-position: center;
-    top:8px;
-    left:8px;
+
+.task-item {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-ul li.checked{
-    color:#555;
-    text-decoration:line-through;
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
 }
-ul li.checked::before{
-    background-image:url("https://d1jj76g3lut4fe.cloudfront.net/processed/thumb/X9mXIyS2px4yJN.png?Expires=1693458514&Signature=ZGVUv3jYVDtUxdEhJcNRMm1AvvoMwH6FjqvslTgYPC-Wicg~uE2SNwiBwISWoziLPzatIAczdkwbMSW5xyDOnz7BUQ3EidfuIZ5hXLTERu6PAg-qQd1TfiAe2lwui2ryGRyDPgiMcIv-dIv1v5jw5Sb12px1a2YCsnFIbIttn0~YM~b~gBaHaV4wsFJECFG-LtkDXUKpnIaXCCH3TdJsBBt-MMDeLM57LxPFZMHsbJ6XE9Ht8K1WleVVAti6W98ESmIWRRSQKNl~40OoAfVms8~Vr9wkjWWjspnNC4KNLNX1gVjhrk63eXaZF1NUQHte~7Iq12kjTtyhXlueTv9Z8g__&Key-Pair-Id=K2YEDJLVZ3XRI");
+
+button.nav-left, button.nav-right {
+    padding: 5px 10px;
+    background: #002765;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
-ul li span{
-    position:absolute;
-    right:0;
-    top:5px;
-    width:40px;
-    height:40px;
-    font-size:22px;
-    color:#555;
-    line-height:40px;
-    text-align:center;
-}
-ul li span:hover{
-    background:#edeef0;
+
+button.nav-left[disabled], button.nav-right[disabled] {
+    background: #ccc;
+    cursor: not-allowed;
 }
